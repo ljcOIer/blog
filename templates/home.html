@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <title>ljc的博客</title>
+        <meta name="author" content="Ljc" />
+        <meta name="description" content="我是一个大菜只因" />
+        <meta name="keywords" content="ljc" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/logo.png" />
+        <script src="/libs/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="preconnect" href="https://static-argvchs.netlify.app" crossorigin />
+<link rel="stylesheet" href="/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="/libs/highlight.js/11.8.0/styles/a11y-light.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="/libs/KaTeX/0.16.8/katex.min.js"></script>
+<script src="/libs/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="/libs/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+<script src="/js/lib/preview.js"></script>
+<script src="/js/lib/home.js"></script>
+<script src="/libs/animejs/3.2.1/anime.min.js"></script>
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>正在加载</h2>
+                        <p>请稍等</p>
+                        <p>如果还没加载出来可以刷新一下</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>LJC的博客</span>
+        </a>
+        
+        <a href="/">
+            H
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/blog">
+            L
+            <span>&ensp;文章列表</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ljc的博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/blog">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章列表</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/light.webp"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>ljc的博客</h1>
+                <h3>我是一个菜只因</h3>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap" true ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+
+        <div class="post">
+    <a href="/blog/大模拟-鸭棋">
+        <h2 class="post-title">大模拟-鸭棋</h2>
+    </a>
+    <div class="category-and-date">
+        <span class="date">
+            <span class="icon">
+                Time:
+            </span>2023/8/16
+            
+        </span>
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+        <p>没什么好说的，直接模拟！
+</p>
+        </div>
+    </div>
+    <div class="post-tags">
+        <span class="icon">
+            Tag:
+        </span>
+        <span class="tag">
+            <a style="color: #00bcd4">题解 模拟
+</a>
+        </span>
+    </div>
+    <a href="/blog/大模拟-鸭棋" class="go-post">阅读全文</a>
+</div>
+        
+        <div class="post">
+    <a href="/blog/hh的项链">
+        <h2 class="post-title">hh的项链</h2>
+    </a>
+    <div class="category-and-date">
+        <span class="date">
+            <span class="icon">
+                Time:
+            </span>2023/08/18
+            
+        </span>
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+        <p>题目描述：
+HH 有一串由各种漂亮的贝壳组成的项链。HH 相信不同的贝壳会带来好运，所以每次散步完后，他都会随意取出一段贝壳，思考它们所表达的含义。HH 不断地收集新的贝壳，因此，他的项链变得越来越长。
+
+有一天，他突然提出了一个问题：某一段贝壳中，包含了多少种不同的贝壳？这个问题很难回答...… 因为项链实在是太长了。于是，他只好求助睿智的你，来解决这个问题。
+</p>
+        </div>
+    </div>
+    <div class="post-tags">
+        <span class="icon">
+            Tag:
+        </span>
+        <span class="tag">
+            <a style="color: #00bcd4">题解 线段树
+</a>
+        </span>
+    </div>
+    <a href="/blog/hh的项链" class="go-post">阅读全文</a>
+</div>
+        
+        <div class="post">
+    <a href="/blog/配置与运行">
+        <h2 class="post-title">配置与运行</h2>
+    </a>
+    <div class="category-and-date">
+        <span class="date">
+            <span class="icon">
+                Time:
+            </span>2023/8/1
+            
+        </span>
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+        <p>本文教你如何配置个人博客服务器
+
+</p>
+        </div>
+    </div>
+    <div class="post-tags">
+        <span class="icon">
+            Tag:
+        </span>
+        <span class="tag">
+            <a style="color: #00bcd4">文章 配置 python js
+</a>
+        </span>
+    </div>
+    <a href="/blog/配置与运行" class="go-post">阅读全文</a>
+</div>
+        
+        <div class="post">
+    <a href="/blog/常用数据结构简讲">
+        <h2 class="post-title">常用数据结构简讲</h2>
+    </a>
+    <div class="category-and-date">
+        <span class="date">
+            <span class="icon">
+                Time:
+            </span>2023/8/18
+            
+        </span>
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+        <p>在这里我会列举几个常用的STL数据结构与文档。
+</p>
+        </div>
+    </div>
+    <div class="post-tags">
+        <span class="icon">
+            Tag:
+        </span>
+        <span class="tag">
+            <a style="color: #00bcd4">文章 数据结构
+</a>
+        </span>
+    </div>
+    <a href="/blog/常用数据结构简讲" class="go-post">阅读全文</a>
+</div>
+        
+
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+    </div>
+    <div class="page-index">
+        
+        <span class="current">1</span>
+        
+    </div>
+    <div class="next">
+        
+    </div>
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-style">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/logo.png" alt="avatar" />
+        </div>
+        <div class="name">ljc</div>
+        <div class="description">
+            <p>我是一个菜只因</p>
+
+        </div>
+        
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/ljcoier">
+                    Github
+                    <!-- <i class="fa-brands fa-github fa-fw"></i> -->
+                </a>
+            </span>
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&uin=2983004079&site=qq&menu=yes">
+                    QQ
+                  <!-- <iclass="fa-brands fa-qq fa-fw"></i> -->
+                </a>
+            </span>
+            
+            <!-- <span class="icon-link">
+                <a href="#">
+                    <i
+                        class="fa-brands fa-twitter fa-fw"
+                    ></i>
+                </a>
+            </span> -->
+            
+            <span class="icon-link">
+                <a href="mailto:ljcoier@outlook.com">
+                    邮箱
+                    <!-- <iclass="fa-solid fa-envelope fa-fw"></i> -->
+                </a>
+            </span>
+            
+        </div>
+        
+            
+            
+            
+        <div class="friend-links">
+            <div class="friend-link">
+              
+                <p>友链:</p>
+              <a target="_blank" rel="noopener" href="http://114.132.122.112:1314/">Nemophery</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 ljc的博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Ljc
+        </div>
+        <div>
+
+
+
+          
+<div id="box"></div>
+  <script>
+    function timingTime(){
+      let start = '2023-8-16 00:00:00'
+      let startTime = new Date(start).getTime()
+      let currentTime = new Date().getTime()
+      let difference = currentTime - startTime
+      let m =  Math.floor(difference / (1000))
+      let mm = m % 60  // 秒
+      let f = Math.floor(m / 60)
+      let ff = f % 60 // 分钟
+      let s = Math.floor(f/ 60) // 小时
+      let ss = s % 24
+      let day = Math.floor(s  / 24 ) // 天数
+      return day + "天" + ss + "时" + ff + "分" + mm +'秒'
+    }
+    setInterval(()=>{
+      document.getElementById('box').innerHTML = "此网站已经开腐"+timingTime()
+    },1000)
+  </script>
+
+
+          
+
+
+          
+            后端使用<a>flask</a>重写 &amp;
+            前端使用插件：<a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        <script>
+            console.info("Welcome to Argvchs' blog!");
+            if (!window.hasOwnProperty("ontouchstart")) {
+                let html = '<canvas id="fireworks" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 32767"></canvas><script src="https://static-argvchs.netlify.app/js/fireworks.min.js"><\/script>';
+                document.body.append(document.createRange().createContextualFragment(html));
+            }
+        </script>
+        
+    </body>
+</html>
